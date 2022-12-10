@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="script.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Perform Google Maps Search</h1>
+  <h3> Please enter the place you want to search</h3>
+  <input type="text" id="mapsearch" size="50"> <br>
+  <br>
+    <div id="map"></div>
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBytbyDdTAD1-nmC-GG9KOUgRiLGoA06ZI&callback=initMap">
+    </script>
+    
+  </body>
+</html>
