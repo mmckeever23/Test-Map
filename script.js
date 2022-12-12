@@ -2,19 +2,21 @@ var map;
 function initMap() {
 
 var myOptions = { 
-           zoom:14,    
-          navigationControl: true,     
-          scaleControl: true,
-           panControl: true,
-           center: new google.maps.LatLng(43.6532,-79.3832),
-           mapTypeId: google.maps.MapTypeId.ROADMAP
+          zoom:2,    
+          // navigationControl: true,     
+          // scaleControl: true,
+          //  panControl: true,
+          center: {lat: 0, lng: 0 },
+          //  new google.maps.LatLng(0, 0),
+          //  mapTypeId: google.maps.MapTypeId.ROADMAP
+          gestureHandling: 'greedy'
           } 
 
   map = new google.maps.Map(document.getElementById('map'),myOptions);
 
   var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(43.6532,-79.3832),
-      title:"Toronto"
+      // position: new google.maps.LatLng(38.62727,-90.19789),
+      // title:"Toronto"
   });
 
 marker.setMap(map);
