@@ -1,57 +1,12 @@
-var map;
 function initMap() {
-
-var myOptions = { 
-          zoom:2,    
-          // navigationControl: true,     
-          // scaleControl: true,
-          //  panControl: true,
-          center: {lat: 0, lng: 0 },
-          //  new google.maps.LatLng(0, 0),
-          //  mapTypeId: google.maps.MapTypeId.ROADMAP
-          gestureHandling: 'greedy'
-          } 
-
-  map = new google.maps.Map(document.getElementById('map'),myOptions);
-
-  var marker = new google.maps.Marker({
-      // position: new google.maps.LatLng(38.62727,-90.19789),
-      // title:"Toronto"
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 2,
+    center: {lat: 0, lng: 0},
   });
 
-marker.setMap(map);
-var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('mapsearch'));
-google.maps.event.addListener(searchBox, 'places_changed', function() {
-searchBox.set('map', null);
-
-
-var places = searchBox.getPlaces();
-
-var bounds = new google.maps.LatLngBounds();
-var i, place;
-for (i = 0; place = places[i]; i++) {
- (function(place) {
-   var marker = new google.maps.Marker({
-
-     position: place.geometry.location
-   });
-   marker.bindTo('map', searchBox, 'map');
-   google.maps.event.addListener(marker, 'map_changed', function() {
-     if (!this.getMap()) {
-       this.unbindAll();
-     }
-   });
-   bounds.extend(place.geometry.location);
-
-
- }(place));
-
-}
-map.fitBounds(bounds);
-searchBox.set('map', map);
-map.setZoom(Math.min(map.getZoom(),12));
-
-});
-
+  const marker = new google.maps.Marker({
+    position: {lat: 38.62727, lng: -90.19789},
+    map: map,
+    draggable: true
+  });
 }
