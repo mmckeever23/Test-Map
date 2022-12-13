@@ -2,6 +2,7 @@ function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 2,
     center: {lat: 0, lng: 0},
+    gestureHandling: 'greedy'
   });
 
   const marker = new google.maps.Marker({
