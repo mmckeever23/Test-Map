@@ -7,3 +7,14 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+  padding: 0px 0px 0px 20px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  background-color: mediumpurple;
+  color: white;
+  letter-spacing: 2px;
+}
